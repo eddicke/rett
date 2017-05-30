@@ -13,18 +13,16 @@
       <hr />
       <input id="messageInput" type="text"></input>
       <button onclick="send();">Send</button>
-     
+      <script src="client.js"></script>
       <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-    <script>
    
-      var socket;
+     var socket;
 var username = window.prompt('Enter a username:', '');
 
 function setup() {
   socket = io();
-  var new = 0
-  
+
   socket.on('chat', function(message, author) {
     var format = 'i';
     if(author == username) format = 'b';
@@ -36,6 +34,7 @@ function send() {
   socket.emit('chat', document.getElementById('messageInput').value, username);
   document.getElementById('messageInput').value = '';
 }
+
 
     </script>
     </div>
