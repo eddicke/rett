@@ -18,11 +18,12 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
    <script>
      var socket;
+      var usr = 0
 var username = window.prompt('Enter a username:', '');
 
 function setup() {
   socket = io();
-  var usr = 0
+ 
   var msgs = []
 socket.on('connect', function() {
  
@@ -30,7 +31,7 @@ socket.emit("ademola", usr)
   socket.on("ademola", function(gme){
      usr++
    
-  console.log(gme);
+  console.log(usr);
     msgs.push(document.getElementById('messageInput').value)
    var p = String(msgs)
    console.log(p)
