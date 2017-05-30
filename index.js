@@ -7,14 +7,13 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-io.sockets.on('connection', function(socket){
-   console.log("new user")
-  socket.on('chat message', function(msg){
-   io.emit('chat message', msg);
-   //socket.broadcast.emit('chat message', msg);
-    console.log("new user")
+io.on('connection', function(socket) {
+  socket.on('chat', function(username, message) {
+    console.log('message received, sent by: ' + username + ', content: ' + message);
+    io.emit('chat', username, message);
   });
 });
+
 
 http.listen(port, function(){
   console.log('listening on *:' + port);
