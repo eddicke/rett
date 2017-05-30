@@ -24,7 +24,11 @@ function setup() {
   socket = io();
   var usr = 0
 socket.on('connect', function() {
-
+  usr++
+socket.emit("ademola", usr)
+  socket.on("ademola", function(gme){
+  console.log(gme);
+  })
 })
   socket.on('chat', function(message, author) {
     var format = 'i';
