@@ -25,14 +25,20 @@
       $(function () {
         var socket = io();
         var messages = []
+        var user = 0
+        var new = 0
          socket.on('connect', function() {
-  socket.emit('chat message', 'new user');
+           user++
+           new++
+  socket.broadcast.emit('chat message', 'new user');
           // console.log('online');
           
           socket.on('chat message', function(msg){
-             messages.push($('#m').val(''));
-            console.log(messages)
-            console.log("new user")
+            user++
+            new++
+            console.log("new"+new)
+            console.log("user"+user)
+          
             
           })
            
