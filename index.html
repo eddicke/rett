@@ -30,7 +30,7 @@
          socket.on('connect', function() {
            user++
            newUser++
-  socket.broadcast.emit('chat message', 'new user');
+  socket.emit('chat message', 'new user');
           // console.log('online');
           
           socket.on('chat message', function(msg){
