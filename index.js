@@ -12,7 +12,9 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
   });
 });
-
+io.sockets.on('connection', function (socket) {
+    console.log('A client is connected!');
+});
 http.listen(port, function(){
   console.log('listening on *:' + port);
 });
