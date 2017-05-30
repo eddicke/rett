@@ -13,10 +13,10 @@ io.on('connection', function(socket) {
     io.emit('chat', username, message);
   });
   //prev msgs
-  socket.on('prev', function(prevmsg) {
+  /*socket.on('prev', function(prevmsg) {
    // console.log('message received, sent by: ' + username + ', content: ' + message);
     io.emit('prev', prevmsg);
-  });
+  });*/
 });
 
 
