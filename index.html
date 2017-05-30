@@ -24,11 +24,15 @@
     <script>
       $(function () {
         var socket = io();
+        var messages = []
          socket.on('connect', function() {
   socket.emit('chat message', 'new user');
           // console.log('online');
+           messages.push($('#m').val(''));
           socket.on('chat message', function(msg){
+            console.log(messages)
             console.log("new user")
+            
           })
            
          })
