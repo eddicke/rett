@@ -26,17 +26,17 @@
         var socket = io();
         var messages = []
         var user = 0
-        var new = 0
+        var newUser = 0
          socket.on('connect', function() {
            user++
-           new++
+           newUser++
   socket.broadcast.emit('chat message', 'new user');
           // console.log('online');
           
           socket.on('chat message', function(msg){
             user++
-            new++
-            console.log("new"+new)
+            newUser++
+            console.log("new"newUser)
             console.log("user"+user)
           
             
