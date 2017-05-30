@@ -24,6 +24,14 @@
     <script>
       $(function () {
         var socket = io();
+         socket.on('connect', function() {
+  socket.emit('chat message', 'new user');
+          // console.log('online');
+          socket.on('chat message', function(msg){
+            console.log("new user")
+          })
+           
+         })
         $('form').submit(function(){
           socket.emit('chat message', $('#m').val());
           $('#m').val('');
