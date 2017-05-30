@@ -17,56 +17,14 @@
       <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
     <script>
-      /*$(function () {
-        var socket = io();
-        var messages = []
-        var user = 0
-        var newUser = 0
-         socket.on('connect', function() {
-           user++
-           newUser++
-  socket.emit('chat message', 'new user');
-          // console.log('online');
-          
-          socket.on('chat message', function(msg){
-            user++
-            newUser++
-            console.log("new"+newUser)
-            console.log("user"+user)
-          
-            
-          })
-           
-         })
-        $('form').submit(function(){
-          socket.emit('chat message', $('#m').val());
-          $('#m').val('');
-          return false;
-        });
-        socket.on('chat message', function(msg){
-          $('#messages').append($('<li>').text(msg));
-          window.scrollTo(0, document.body.scrollHeight);
-        });
-      });*/
+   
       var socket;
 var username = window.prompt('Enter a username:', '');
 
 function setup() {
   socket = io();
   var new = 0
-   /*socket.on('connect', function() {
-     new++;
-/*  socket.emit('prev', new);
-           socket.on('prev', function(prevmsg) {
-       console.log(prevmsg)
-     })*/
-   })/////
-    
- //prev msgs
-/*  socket.on('prev', function(prevmsg) {
-   // console.log('message received, sent by: ' + username + ', content: ' + message);
-    io.emit('prev', prevmsg);
-  });*/
+  
   socket.on('chat', function(message, author) {
     var format = 'i';
     if(author == username) format = 'b';
