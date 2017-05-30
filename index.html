@@ -57,11 +57,11 @@ function setup() {
    socket.on('connect', function() {
      new++;
   socket.emit('prev', new);
-          
-   })
-     socket.on('prev', function(prevmsg) {
+           socket.on('prev', function(prevmsg) {
        console.log(prevmsg)
      })
+   })
+    
  //prev msgs
 /*  socket.on('prev', function(prevmsg) {
    // console.log('message received, sent by: ' + username + ', content: ' + message);
