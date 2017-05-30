@@ -12,7 +12,11 @@ io.on('connection', function(socket) {
     console.log('message received, sent by: ' + username + ', content: ' + message);
     io.emit('chat', username, message);
   });
-  
+  //prev msgs
+  /*socket.on('prev', function(prevmsg) {
+   // console.log('message received, sent by: ' + username + ', content: ' + message);
+    io.emit('prev', prevmsg);
+  });*/
 });
 
 
