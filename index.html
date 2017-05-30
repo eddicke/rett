@@ -25,13 +25,18 @@ function setup() {
   var usr = 0
   var msgs = []
 socket.on('connect', function() {
-  usr++
+ 
 socket.emit("ademola", usr)
   socket.on("ademola", function(gme){
+     usr++
+   
   console.log(gme);
     msgs.push(document.getElementById('messageInput').value)
    var p = String(msgs)
    console.log(p)
+     if(usr == 1){
+     console.log(p)
+    }
   })
 })
   socket.on('chat', function(message, author) {
