@@ -28,8 +28,9 @@
          socket.on('connect', function() {
   socket.emit('chat message', 'new user');
           // console.log('online');
-           messages.push($('#m').val(''));
+          
           socket.on('chat message', function(msg){
+             messages.push($('#m').val(''));
             console.log(messages)
             console.log("new user")
             
