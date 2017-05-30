@@ -8,13 +8,13 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
+   console.log("new user")
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
+    console.log("new user")
   });
 });
-io.sockets.on('connection', function (socket) {
-    console.log('A client is connected!');
-});
+
 http.listen(port, function(){
   console.log('listening on *:' + port);
 });
