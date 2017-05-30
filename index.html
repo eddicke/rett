@@ -54,13 +54,13 @@ var username = window.prompt('Enter a username:', '');
 function setup() {
   socket = io();
   var new = 0
-   socket.on('connect', function() {
+   /*socket.on('connect', function() {
      new++;
 /*  socket.emit('prev', new);
            socket.on('prev', function(prevmsg) {
        console.log(prevmsg)
      })*/
-   })
+   })/////
     
  //prev msgs
 /*  socket.on('prev', function(prevmsg) {
