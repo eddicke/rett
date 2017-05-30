@@ -29,6 +29,8 @@ function setup() {
 socket.on('connect', function() {
  usr.push(score)
 socket.emit("ademola", usr)
+  
+})
   socket.on("ademola", function(gme){
     score++
      usr.push(score)
@@ -38,10 +40,9 @@ socket.emit("ademola", usr)
    var p = String(msgs)
    console.log(p)
      if(usr == 2){
-     console.log(x)
+     console.log(usr)
     }
   })
-})
   socket.on('chat', function(message, author) {
     var format = 'i';
     if(author == username) format = 'b';
