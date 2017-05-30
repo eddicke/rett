@@ -22,7 +22,10 @@ var username = window.prompt('Enter a username:', '');
 
 function setup() {
   socket = io();
+  var usr = 0
+socket.on('connect', function() {
 
+})
   socket.on('chat', function(message, author) {
     var format = 'i';
     if(author == username) format = 'b';
