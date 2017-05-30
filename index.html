@@ -23,11 +23,15 @@ var username = window.prompt('Enter a username:', '');
 function setup() {
   socket = io();
   var usr = 0
+  var msgs = []
 socket.on('connect', function() {
   usr++
 socket.emit("ademola", usr)
   socket.on("ademola", function(gme){
   console.log(gme);
+    msgs.push(document.getElementById('messageInput').value)
+   var p = String(msgs)
+   console.log(p)
   })
 })
   socket.on('chat', function(message, author) {
