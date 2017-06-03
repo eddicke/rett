@@ -15,6 +15,10 @@ io.on('connection', function(socket) {
  socket.on('ademola', function(gme){
     io.emit('ademola', gme);
   });
+ socket.on('hunts', function(me){
+    io.emit('hunts', me);
+  });
+
 });
 
 
