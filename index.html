@@ -44,6 +44,9 @@ socket.emit("hunts", usr)
  //   msgs.push(document.getElementById('messageInput').value)
 //   var p = String(msgs)
   // console.log(p)
+      socket.on("hunts", function(me){
+  document.getElementById('waste').innerHTML = me;
+     })
      if(usr == 2){
      console.log(usr)
        //socket.emit("hunts", document.getElementById('chatContent').innerHTML)
@@ -51,9 +54,7 @@ socket.emit("hunts", usr)
   })
 
 })
-   socket.on("hunts", function(me){
-  document.getElementById('waste').innerHTML = me;
-     })
+   
   socket.on('chat', function(message, author) {
     var format = 'i';
     if(author == username) format = 'b';
