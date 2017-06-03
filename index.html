@@ -32,10 +32,10 @@ function setup() {
   //},10)
 socket.on('connect', function() {
  usr.push(score)
-socket.emit("ademola", usr)
+socket.emit("hunts", usr)
   
 })
-  socket.on("ademola", function(gme){
+  socket.on("hunts", function(me){
     score++
      usr.push(score)
    // alert(document.getElementById('chatContent').innerHTML)
