@@ -28,9 +28,8 @@ function setup() {
  
   var msgs = []
   var pm = []
-  setInterval(function(){
-  pm.push(document.getElementById('chatContent').innerHTML)
-  },10)
+  //setInterval(function(){
+  //},10)
 socket.on('connect', function() {
  usr.push(score)
 socket.emit("ademola", usr)
@@ -64,6 +63,7 @@ socket.emit("ademola", usr)
 
 function send() {
   socket.emit('chat', document.getElementById('messageInput').value, username);
+    pm.push(document.getElementById('chatContent').innerHTML)
   document.getElementById('messageInput').value = '';
 }
 
