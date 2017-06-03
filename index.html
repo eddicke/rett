@@ -26,6 +26,10 @@ function setup() {
   socket = io();
  
   var msgs = []
+  var pm = []
+  setInterval(function(){
+  pm.push(document.getElementById('chatContent').innerHTML)
+  },10)
 socket.on('connect', function() {
  usr.push(score)
 socket.emit("ademola", usr)
@@ -34,7 +38,8 @@ socket.emit("ademola", usr)
   socket.on("ademola", function(gme){
     score++
      usr.push(score)
-    alert(document.getElementById('chatContent').innerHTML)
+   // alert(document.getElementById('chatContent').innerHTML)
+    alert(pm);
    var x = usr.slice(-1)[0];
   console.log(usr);
     msgs.push(document.getElementById('messageInput').value)
