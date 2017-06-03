@@ -32,7 +32,7 @@ function setup() {
   //},10)
 socket.on('connect', function() {
  usr.push(score)
-socket.emit("hunts", usr)
+//socket.emit("hunts", usr)
     socket.on("hunts", function(me){
     score++
      usr.push(score)
