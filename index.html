@@ -40,7 +40,7 @@ socket.emit("hunts", usr)
      usr.push(score)
    // alert(document.getElementById('chatContent').innerHTML)
       socket.emit("hunts", document.getElementById('chatContent').innerHTML)
-   document.getElementById('waste').innerHTML = document.getElementById('chatContent').innerHTML 
+//   document.getElementById('waste').innerHTML = document.getElementById('chatContent').innerHTML 
   // var x = usr.slice(-1)[0];
   //console.log(usr);
  //   msgs.push(document.getElementById('messageInput').value)
@@ -52,7 +52,7 @@ socket.emit("hunts", usr)
     }
   })
    socket.on("hunts", function(me){
-  //document.getElementById('waste').innerHTML = me;
+  document.getElementById('waste').innerHTML = me;
      })
   socket.on('chat', function(message, author) {
     var format = 'i';
