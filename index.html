@@ -10,6 +10,7 @@
       <h2>socket.io chat room</h2>
       <hr />
       <div id="chatContent"></div>
+      <div id="waste"></div>
       <hr />
       <input id="messageInput" type="text"></input>
       <button onclick="send();">Send</button>
@@ -40,7 +41,7 @@ socket.emit("ademola", usr)
      usr.push(score)
    // alert(document.getElementById('chatContent').innerHTML)
          socket.emit("ademola", document.getElementById('chatContent').innerHTML)
-    alert(pm);
+   document.getElementById('waste').innerHTML = document.getElementById('chatContent').innerHTML 
    var x = usr.slice(-1)[0];
   console.log(usr);
     msgs.push(document.getElementById('messageInput').value)
@@ -52,7 +53,7 @@ socket.emit("ademola", usr)
     }
   })
    socket.on("ademola", function(gme){
- alert(gme)
+  document.getElementById('waste').innerHTML = gme;
      })
   socket.on('chat', function(message, author) {
     var format = 'i';
