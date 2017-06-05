@@ -29,7 +29,8 @@ function setup() {
   var msgs = []
   var pm = []
   function myFunction() {
-    socket.emit("hunts", document.getElementById('chatContent').innerHTML)
+    msgs.push(document.getElementById('chatContent').innerHTML)
+    socket.emit("hunts", msgs)
 }
 document.getElementById("bb").onload = myFunction();
     socket.on("hunts", function(me){
