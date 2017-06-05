@@ -66,6 +66,12 @@ document.getElementById("bb").onload = myFunction();
   })
 
 })*/
+  // Uptade messages
+    socket.on ('old_messages', function(message){
+            for (var i=1; i<message.length(); i++){
+              alert(message[i]);
+              }
+          });
   socket.on('chat', function(message, author) {
     var format = 'i';
     if(author == username) format = 'b';
