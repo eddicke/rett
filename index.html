@@ -28,6 +28,15 @@ function setup() {
  
   var msgs = []
   var pm = []
+  
+  socket.on('connect', function() {
+// usr.push(score)
+ socket.emit("hunts", "hello")
+    socket.on("hunts", function(me){
+    alert(me)
+  
+      })
+    })
 /*  function myFunction() {
     msgs.push(document.getElementById('chatContent').innerHTML)
     socket.emit("hunts", msgs)
