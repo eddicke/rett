@@ -22,7 +22,7 @@
       var usr = []
       var score = 0
 var username = window.prompt('Enter a username:', '');
-document.getElementById('chatContent').innerHTML = "hello bro"
+document.getElementById('chatContent').innerHTML = "welcome to the chat forum"
 function setup() {
   socket = io();
  
@@ -34,8 +34,7 @@ function setup() {
  socket.emit("hunts", document.getElementById('chatContent').innerHTML)
     socket.on("hunts", function(me){
     usrs++
-      if(usrs == 2){
-      alert(me)
+      if(usrs++){
         socket.emit("ademola", document.getElementById('chatContent').innerHTML)
   }
       })
