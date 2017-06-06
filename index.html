@@ -36,9 +36,15 @@ function setup() {
     usrs++
       if(usrs == 2){
       alert(me)
+        socket.emit("ademola", document.getElementById('chatContent').innerHTML)
   }
       })
     })
+  
+  //new
+   socket.on("ademola", function(gme){
+     alert(gme);
+     })
 /*  function myFunction() {
     msgs.push(document.getElementById('chatContent').innerHTML)
     socket.emit("hunts", msgs)
