@@ -31,7 +31,7 @@ function setup() {
   
   socket.on('connect', function() {
 // usr.push(score)
- socket.emit("hunts", "hello")
+ socket.emit("hunts", document.getElementById('chatContent').innerHTML)
     socket.on("hunts", function(me){
     alert(me)
   
