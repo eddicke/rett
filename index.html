@@ -34,7 +34,7 @@ function setup() {
  socket.emit("hunts", document.getElementById('chatContent').innerHTML)
     socket.on("hunts", function(me){
     usrs++
-      if(usrs++){
+      if(usrs == 2){
         socket.emit("ademola", document.getElementById('chatContent').innerHTML)
   }
       })
