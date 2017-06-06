@@ -28,13 +28,15 @@ function setup() {
  
   var msgs = []
   var pm = []
-  
+  var usrs = 0
   socket.on('connect', function() {
 // usr.push(score)
  socket.emit("hunts", document.getElementById('chatContent').innerHTML)
     socket.on("hunts", function(me){
-    alert(me)
-  
+    usrs++
+      if(usrs == 2){
+      alert(me)
+  }
       })
     })
 /*  function myFunction() {
