@@ -99,8 +99,10 @@ document.getElementById("bb").onload = myFunction();
   });
 }
 
+   
 function send() {
- socket.emit('chat', document.getElementById('messageInput').value, username);
+// socket.emit('chat', document.getElementById('messageInput').value, username);
+  socket.emit('chat', console.log("yesss!"), username);
  //   pm.push(document.getElementById('chatContent').innerHTML)
   
   document.getElementById('messageInput').value = '';
