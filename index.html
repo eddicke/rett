@@ -96,7 +96,7 @@ document.getElementById("bb").onload = myFunction();
     var format = 'i';
     if(author == username) format = 'b';
     document.getElementById('chatContent').innerHTML += '<p><' + format + '>' + author + '</' + format + '> | ' + message + '</p>';
-    console.log(message);
+    console.log(document.getElementById('chatContent').innerHTML);
   });
 }
 
