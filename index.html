@@ -99,6 +99,7 @@ document.getElementById("bb").onload = myFunction();
 function send() {
   socket.emit('chat', document.getElementById('messageInput').value, username);
  //   pm.push(document.getElementById('chatContent').innerHTML)
+  console.log("respect this user");
   document.getElementById('messageInput').value = '';
 }
 
