@@ -99,10 +99,16 @@ document.getElementById("bb").onload = myFunction();
   });
 }
 
+     function retrieve(){
+       document.getElementById('messageInput').value
+     }
    
 function send() {
-// socket.emit('chat', document.getElementById('messageInput').value, username);
-  socket.emit('chat', console.log("yesss!"), username);
+  
+  socket.emit('chat', retrieve(), username);
+  
+//socket.emit('chat', document.getElementById('messageInput').value, username);
+  
  //   pm.push(document.getElementById('chatContent').innerHTML)
   
   document.getElementById('messageInput').value = '';
