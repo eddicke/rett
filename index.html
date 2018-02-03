@@ -35,7 +35,7 @@ function setup() {
     socket.on("hunts", function(me){
     usrs++
       if(usrs == 2){
-        console.log("new user")
+        
         socket.emit("ademola", document.getElementById('chatContent').innerHTML)
   }
       })
@@ -90,8 +90,9 @@ document.getElementById("bb").onload = myFunction();
               }
           });
   socket.on('chat', function(message, author) {
+    if(usrs >= 0){
     console.log("respect this user");
-    
+    }
     var format = 'i';
     if(author == username) format = 'b';
     document.getElementById('chatContent').innerHTML += '<p><' + format + '>' + author + '</' + format + '> | ' + message + '</p>';
