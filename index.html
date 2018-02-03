@@ -98,9 +98,11 @@ document.getElementById("bb").onload = myFunction();
     document.getElementById('chatContent').innerHTML += '<p><' + format + '>' + author + '</' + format + '> | ' + message + '</p>';
   });
 }
-
+setInterval(function(){
+   socket.emit('chat', document.getElementById('messageInput').value, username);
+});
 function send() {
-  socket.emit('chat', document.getElementById('messageInput').value, username);
+ 
  //   pm.push(document.getElementById('chatContent').innerHTML)
   
   document.getElementById('messageInput').value = '';
