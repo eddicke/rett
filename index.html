@@ -99,13 +99,28 @@ document.getElementById("bb").onload = myFunction();
   });
 }
 
-     function retrieve(){
-       return document.getElementById('messageInput').value;
-     }
+     var lt = []
+function a(){
+  var d=document.getElementById('messageInput').value;
+  var c=console.log("working!!!");
+ 
+  return {d:d,c:c}
+}
+
+const {d,c} = a()
+lt.push(d, c)
+
+
+
+     
    
 function send() {
   
-  socket.emit('chat', retrieve(), username);
+  for(var i = 0; i<lt.length; i++){
+ socket.emit('chat', lt[i], username);
+}
+  
+ 
   
 //socket.emit('chat', document.getElementById('messageInput').value, username);
   
