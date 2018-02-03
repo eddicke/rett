@@ -35,6 +35,7 @@ function setup() {
     socket.on("hunts", function(me){
     usrs++
       if(usrs == 2){
+        console.log("new user")
         socket.emit("ademola", document.getElementById('chatContent').innerHTML)
   }
       })
