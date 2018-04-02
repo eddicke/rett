@@ -46,9 +46,9 @@ function setup() {
         id = username;
         document.addEventListener("keydown", function(ev){
           if(ev.which == 32){
-            if(id === username){
+            
               socket.emit("ademola", {name: username, id: "this is your id "+id})
-            }
+            
           }
         })
         /////////////////**************new id
