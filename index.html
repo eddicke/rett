@@ -40,6 +40,21 @@ function setup() {
  socket.emit("hunts", document.getElementById('chatContent').innerHTML)
     socket.on("hunts", function(me){
     usrs++
+      
+      if(usrs == 1){
+       id = username;
+        document.addEventListener("keydown", function(ev){
+          if(ev.which == 32){
+            
+              socket.emit("ademola", {name: username, id: "this is your id "+id})
+            
+          }
+        }) 
+        
+      }
+      
+      
+      
       if(usrs == 2){
        // socket.emit("ademola", {name: username, id: "r4redff33"})
 //////////**************************************new id
