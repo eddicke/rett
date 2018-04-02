@@ -30,6 +30,7 @@ function setup() {
   var pm = []
   var names = []
   var usrs = 0
+  var id;
   socket.on('connect', function() {
   names.push(username)
     console.log(names.length)
@@ -40,8 +41,17 @@ function setup() {
     socket.on("hunts", function(me){
     usrs++
       if(usrs == 2){
-        socket.emit("ademola", {name: username, id: "r4redff33"})
-
+       // socket.emit("ademola", {name: username, id: "r4redff33"})
+//////////**************************************new id
+        id = username;
+        document.addEventListener("keydown", function(ev){
+          if(ev.which == 32){
+            if(id === username){
+              socket.emit("ademola", {name: username, id: "this is your id "+id})
+            }
+          }
+        })
+        /////////////////**************new id
         
   }
       })
@@ -49,7 +59,7 @@ function setup() {
   
   //new
    socket.on("ademola", function(gme){
-console.log(gme.name)
+console.log(gme)
      })
 
   
