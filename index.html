@@ -34,14 +34,14 @@ function setup() {
   names.push(username)
     console.log(names.length)
   
-    socket.emit("ademola", {name: names[names.length-1], id: "r4redff33"})
-
+    
    
  socket.emit("hunts", document.getElementById('chatContent').innerHTML)
     socket.on("hunts", function(me){
     usrs++
       if(usrs == 2){
-        
+        socket.emit("ademola", {name: username, id: "r4redff33"})
+
         
   }
       })
