@@ -22,6 +22,7 @@
       var usr = []
       var score = 0
 var username = window.prompt('Enter a username:', '');
+     var nm = username
 document.getElementById('chatContent').innerHTML = "welcome to the chat forum"
 function setup() {
   socket = io();
@@ -74,7 +75,12 @@ function setup() {
   
   //new
    socket.on("ademola", function(gme){
-console.log(gme)
+     document.addEventListener("keydown", function(ev){
+if(gme.name === nme){
+  console.log("your platform "+nme)
+}
+       
+     })
      })
 
   
