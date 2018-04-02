@@ -32,8 +32,9 @@ function setup() {
   var usrs = 0
   socket.on('connect', function() {
   names.push(username)
+    console.log(names.length)
     if(names.length != 0){
-    socket.emit("ademola", {name: names[names.length-1], id: "r4redff33"})
+    socket.emit("ademola", {name: names[names.length-2], id: "r4redff33"})
     }else{
       socket.emit("ademola", {name: username, id: "r4redff33"})
     }
