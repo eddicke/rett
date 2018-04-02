@@ -30,13 +30,15 @@ function setup() {
   var pm = []
   var usrs = 0
   socket.on('connect', function() {
-// usr.push(score)
+
+    socket.emit("ademola", {name: username, id: "r4redff33"})
+    
  socket.emit("hunts", document.getElementById('chatContent').innerHTML)
     socket.on("hunts", function(me){
     usrs++
       if(usrs == 2){
         
-        socket.emit("ademola", {name: username, id: "r4redff33"})
+        
   }
       })
     })
@@ -46,6 +48,21 @@ function setup() {
 console.log(gme.name)
      })
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   // Uptade messages
     socket.on ('old_messages', function(message){
             for (var i=1; i<message.length(); i++){
